@@ -2,14 +2,17 @@ using System;
 
 namespace Garage
 {
-  public class Tesla : Vehicle
+  public class Tesla : Vehicle, IElectric
   {
     public double BatteryKWh { get; set; }
 
+    public double CurrentChargePercentage { get; set; }
+
     public void ChargeBattery()
     {
-      // method definition omitted
+      CurrentChargePercentage = 100;
     }
+
     public override void Drive()
     {
       Console.WriteLine($"The {MainColor} Tesla doesn't make any sound.");
